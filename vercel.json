@@ -4,11 +4,14 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "regions": ["sfo1"],
+  "regions": ["sin1"],
   "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key",
-    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
-    "GOOGLE_AI_KEY": "@google_ai_key"
+    "GOOGLE_AI_KEY": "AIzaSyDt9-TIn5uUTJb-1RRJyjOS72tkheS4-gM",
+    "POSTGRES_URL": "postgresql://postgres:passwordchew449284@db.xgtvbpyxpnvmmpmkwhxg.supabase.co:5432/postgres",
+    "POSTGRES_PRISMA_URL": "postgresql://postgres:passwordchew449284@db.xgtvbpyxpnvmmpmkwhxg.supabase.co:5432/postgres?pgbouncer=true&connect_timeout=15",
+    "POSTGRES_URL_NON_POOLING": "postgresql://postgres:passwordchew449284@db.xgtvbpyxpnvmmpmkwhxg.supabase.co:5432/postgres",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://xgtvbpyxpnvmmpmkwhxg.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhndHZicHl4cG52bW1wbWt3aHhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIwOTQ5NjMsImV4cCI6MjA1NzY3MDk2M30.xoa4wg3pAuMFERDyfXjALNwTrIACo9upQtq0zoWY09A",
+    "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhndHZicHl4cG52bW1wbWt3aHhnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MjA5NDk2MywiZXhwIjoyMDU3NjcwOTYzfQ.ftIm5emEbiQftNoeT_416GlZejRXNOTzUR2jE-zp8I0"
   }
 } 
