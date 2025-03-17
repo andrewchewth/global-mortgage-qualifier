@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
-import { Toaster } from 'sonner'
-import Link from 'next/link'
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Global Mortgage Qualifier",
@@ -44,48 +43,74 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
-        <header className="sticky top-0 z-50 w-full border-b bg-background">
-          <div className="container flex h-14 items-center">
-            <nav className="flex items-center space-x-6 text-sm font-medium">
-              <a href="/" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Home
-              </a>
-              <a href="/calculator" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                Calculator
-              </a>
-              <a href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                About
-              </a>
-            </nav>
-          </div>
-        </header>
-        <main className="flex-1">{children}</main>
-        <footer className="border-t py-6 md:py-0">
-          <div className="container flex h-14 items-center justify-between">
-            <p className="text-sm text-muted-foreground">
-              Built by{" "}
-              <a
-                href="https://github.com/andrewchewth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium underline underline-offset-4"
-              >
-                Andrew Chew
-              </a>
-              . The source code is available on{" "}
-              <a
-                href="https://github.com/andrewchewth/global-mortgage-qualifier"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium underline underline-offset-4"
-              >
-                GitHub
-              </a>
-              .
-            </p>
-          </div>
-        </footer>
-        <Toaster position="top-center" />
+        <div className="relative flex min-h-screen flex-col">
+          <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex h-16 items-center justify-between">
+              <div className="flex items-center gap-6">
+                <Link 
+                  href="/" 
+                  className="text-lg font-bold hover:text-primary transition-colors"
+                >
+                  Global Mortgage Qualifier
+                </Link>
+                <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+                  <Link 
+                    href="/calculator" 
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Calculator
+                  </Link>
+                  <Link 
+                    href="/resources" 
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Resources
+                  </Link>
+                  <Link 
+                    href="/about" 
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    About
+                  </Link>
+                </nav>
+              </div>
+            </div>
+          </header>
+
+          <main className="flex-1">
+            <div className="container py-8">
+              {children}
+            </div>
+          </main>
+
+          <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container py-6">
+              <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+                <p className="text-center text-sm text-muted-foreground md:text-left">
+                  Built by{" "}
+                  <a
+                    href="https://github.com/andrewchewth"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
+                  >
+                    Andrew Chew
+                  </a>
+                  . The source code is available on{" "}
+                  <a
+                    href="https://github.com/andrewchewth/global-mortgage-qualifier"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
+                  >
+                    GitHub
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
