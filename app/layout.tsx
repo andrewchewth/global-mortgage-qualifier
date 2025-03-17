@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans antialiased">
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} antialiased`} suppressHydrationWarning>
+      <body className="min-h-screen bg-background font-sans">
         <div className="relative flex min-h-screen flex-col">
           <header className={styles.header}>
             <nav className={styles.container}>
@@ -52,7 +52,7 @@ export default function RootLayout({
             </div>
           </main>
 
-          <footer className="border-t">
+          <footer className="border-t bg-background">
             <div className={`${styles.container} py-6 md:py-0`}>
               <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                 <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
