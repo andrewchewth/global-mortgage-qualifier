@@ -1,91 +1,92 @@
-import type { Metadata, Viewport } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import './globals.css'
+import type { Metadata } from "next";
+import { GeistSans, GeistMono } from "geist/font";
+import "./globals.css";
 import { Toaster } from 'sonner'
 import Link from 'next/link'
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-}
-
 export const metadata: Metadata = {
-  title: 'Global Mortgage Qualifier',
-  description: 'Pre-qualify for a US mortgage as a foreign national or US expat',
-}
+  title: "Global Mortgage Qualifier",
+  description: "Calculate your mortgage qualification across different countries",
+  keywords: "mortgage, qualification, calculator, global, international",
+  authors: [{ name: "Andrew Chew" }],
+  creator: "Andrew Chew",
+  publisher: "Andrew Chew",
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://global-mortgage-qualifier.vercel.app",
+    title: "Global Mortgage Qualifier",
+    description: "Calculate your mortgage qualification across different countries",
+    siteName: "Global Mortgage Qualifier",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Global Mortgage Qualifier",
+    description: "Calculate your mortgage qualification across different countries",
+    creator: "@andrewchewth",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html 
-      lang="en" 
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <div className="relative flex min-h-screen flex-col">
-          <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between">
-              <div className="flex items-center gap-6">
-                <Link 
-                  href="/" 
-                  className="text-lg font-bold hover:text-primary transition-colors"
-                >
-                  Global Mortgage Qualifier
-                </Link>
-                <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-                  <Link 
-                    href="/resources" 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Resources
-                  </Link>
-                  <Link 
-                    href="/contact" 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Contact
-                  </Link>
-                  <a
-                    href="https://github.com/andrewchewth/global-mortgage-qualifier"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    GitHub
-                  </a>
-                </nav>
-              </div>
-            </div>
-          </header>
-
-          <main className="flex-1">
-            <div className="container py-8">
-              {children}
-            </div>
-          </main>
-
-          <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container py-6">
-              <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-                <p className="text-center text-sm text-muted-foreground md:text-left">
-                  © 2024 Global Mortgage Qualifier. All rights reserved.
-                </p>
-              </div>
-            </div>
-          </footer>
-          
-          <Toaster position="top-center" />
-        </div>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body>
+        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="container flex h-14 items-center">
+            <nav className="flex items-center space-x-6 text-sm font-medium">
+              <a href="/" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                Home
+              </a>
+              <a href="/calculator" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                Calculator
+              </a>
+              <a href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
+                About
+              </a>
+            </nav>
+          </div>
+        </header>
+        <main className="flex-1">{children}</main>
+        <footer className="border-t py-6 md:py-0">
+          <div className="container flex h-14 items-center justify-between">
+            <p className="text-sm text-muted-foreground">
+              Built by{" "}
+              <a
+                href="https://github.com/andrewchewth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium underline underline-offset-4"
+              >
+                Andrew Chew
+              </a>
+              . The source code is available on{" "}
+              <a
+                href="https://github.com/andrewchewth/global-mortgage-qualifier"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium underline underline-offset-4"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          </div>
+        </footer>
+        <Toaster position="top-center" />
       </body>
     </html>
-  )
+  );
 }
