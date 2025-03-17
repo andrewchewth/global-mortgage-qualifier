@@ -27,50 +27,42 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-          {/* Background with multiple gradients and patterns */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(var(--primary-rgb),0.1),transparent_40%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(var(--secondary-rgb),0.1),transparent_40%)]" />
-          <div className="absolute inset-0 bg-grid-small-white/[0.2] -z-10" />
-          
-          <div className="container px-4 md:px-6 relative">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-6">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
-                  Mortgage Pre-Qualification for Foreign Nationals & US Expats
-                </h1>
-                <p className="text-lg text-muted-foreground md:text-xl max-w-[600px]">
-                  Find the right mortgage program for your unique situation. Our pre-qualification tool helps you
-                  understand your options before speaking with a loan officer.
-                </p>
-                <div className="flex flex-col gap-4 min-[400px]:flex-row">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+                    Mortgage Pre-Qualification for Foreign Nationals & US Expats
+                  </h1>
+                  <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                    Find the right mortgage program for your unique situation. Our pre-qualification tool helps you
+                    understand your options before speaking with a loan officer.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="/assessment/start">
-                    <Button size="lg" className="w-full min-[400px]:w-auto bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-all duration-200">
-                      Start Pre-Qualification <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button size="lg" className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90">
+                      Start Pre-Qualification
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link href="/resources">
-                    <Button variant="outline" size="lg" className="w-full min-[400px]:w-auto border-2 hover:bg-secondary/10">
+                    <Button variant="outline" size="lg" className="border-2">
                       Learn More
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
-                <div className="relative h-[350px] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-background via-muted to-background shadow-xl border border-muted/50 transition-all duration-300 hover:shadow-2xl backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-50" />
-                  <div className="absolute inset-0 bg-grid-small-white/[0.2]" />
+              <div className="mx-auto flex w-full items-center justify-center">
+                <div className="relative aspect-square w-full max-w-[450px] overflow-hidden rounded-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop"
-                    alt="Modern luxury home representing global mortgage opportunities"
-                    className="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-300"
-                    width={1000}
-                    height={667}
+                    src="/house-keys.jpg"
+                    alt="House keys with a model home"
+                    className="object-cover"
                     priority
-                    unoptimized={false}
+                    fill
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 </div>
               </div>
             </div>
