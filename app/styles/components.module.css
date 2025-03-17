@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .header {
@@ -11,8 +11,8 @@
   z-index: 50;
   width: 100%;
   border-bottom: 1px solid hsl(var(--border));
-  background-color: hsl(var(--background) / 0.95);
-  backdrop-filter: blur(8px);
+  background-color: hsl(var(--background));
+  backdrop-filter: blur(12px);
 }
 
 .nav {
@@ -24,11 +24,12 @@
 }
 
 .logo {
-  font-weight: 700;
   font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
   color: hsl(var(--foreground));
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .logo:hover {
@@ -46,7 +47,7 @@
   font-weight: 500;
   color: hsl(var(--muted-foreground));
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .link:hover {
@@ -56,12 +57,12 @@
 .main {
   flex: 1;
   width: 100%;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .section {
-  padding: 4rem 0;
   width: 100%;
+  padding: 4rem 0;
 }
 
 @media (min-width: 768px) {
@@ -137,13 +138,25 @@
 .buttonGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 @media (min-width: 400px) {
   .buttonGroup {
     flex-direction: row;
-    gap: 1rem;
   }
+}
+
+.card {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background-color: hsl(var(--card));
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px hsl(var(--muted) / 0.3);
 } 

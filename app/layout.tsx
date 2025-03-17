@@ -9,6 +9,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Global Mortgage Qualifier',
   description: 'Pre-qualify for a US mortgage as a foreign national or US expat',
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({
@@ -17,8 +18,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} antialiased`} suppressHydrationWarning>
-      <body className="min-h-screen bg-background font-sans">
+    <html 
+      lang="en" 
+      className={`${GeistSans.variable} ${GeistMono.variable}`} 
+      suppressHydrationWarning
+    >
+      <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <div className="relative flex min-h-screen flex-col">
           <header className={styles.header}>
             <nav className={styles.container}>
