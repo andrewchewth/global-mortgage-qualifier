@@ -3,7 +3,9 @@ import type { Config } from "tailwindcss";
 const config = {
     darkMode: ["class"],
     content: [
+    "./App/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./Components/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   prefix: "",
@@ -91,6 +93,15 @@ const config = {
   		}
   	}
   },
+  safelist: [
+    'bg-background',
+    'text-foreground',
+    'font-sans',
+    'antialiased',
+    {
+      pattern: /^(bg|text|border|ring)-(background|foreground|primary|secondary|accent|muted|card|popover)/,
+    },
+  ],
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
