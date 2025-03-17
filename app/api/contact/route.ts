@@ -4,7 +4,7 @@ import { supabaseAdmin } from '@/lib/supabase'
 export async function POST(req: Request) {
   try {
     // Test Supabase connection
-    const { data: testData, error: testError } = await supabaseAdmin
+    const { error: testError } = await supabaseAdmin
       .from('contacts')
       .select('count')
       .limit(1)
