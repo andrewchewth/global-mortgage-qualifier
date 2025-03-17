@@ -1,0 +1,8 @@
+-- Create contacts table
+CREATE TABLE contacts (
+  id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name TEXT NOT NULL,
+  phone_number TEXT NOT NULL,
+  email TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+); 
