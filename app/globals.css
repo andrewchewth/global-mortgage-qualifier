@@ -1,3 +1,6 @@
+/* Import custom utilities before Tailwind */
+@import './styles/custom-utilities.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,20 +57,8 @@
     @apply border-border;
   }
 
-  html {
-    @apply antialiased;
-  }
-
   body {
-    @apply bg-background text-foreground min-h-screen font-sans;
-  }
-  
-  section {
-    @apply flex flex-col items-center justify-center w-full;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-center md:text-left font-sans;
+    @apply font-sans bg-background text-foreground antialiased;
   }
 
   h1 {
@@ -75,7 +66,7 @@
   }
 
   h2 {
-    @apply scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0;
+    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
   }
 
   h3 {
@@ -89,29 +80,32 @@
   p {
     @apply leading-7 [&:not(:first-child)]:mt-6;
   }
-
-  a {
-    @apply text-foreground hover:text-primary transition-colors duration-200;
-  }
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
-  
+
+  .btn {
+    @apply inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+           disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
   .btn-secondary {
     @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
   }
-  
+
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+
   .btn-ghost {
     @apply hover:bg-accent hover:text-accent-foreground;
   }
-  
+
   .btn-link {
     @apply text-primary underline-offset-4 hover:underline;
   }
 }
-
-/* Import custom utilities after layer definitions */
-@import './styles/custom-utilities.css';
