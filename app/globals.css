@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/custom-utilities.css';
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -85,7 +83,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
   
   /* Improved centering for all sections */
@@ -147,3 +145,6 @@
     @apply border border-input hover:bg-accent hover:text-accent-foreground;
   }
 }
+
+/* Import custom utilities after base styles */
+@import './styles/custom-utilities.css';

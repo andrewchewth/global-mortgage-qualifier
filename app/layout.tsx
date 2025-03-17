@@ -17,45 +17,51 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-      </head>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} min-h-screen bg-background font-sans antialiased`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <div className="relative flex min-h-screen flex-col">
           <header className={styles.header}>
-            <div className={`${styles.container} ${styles.nav}`}>
-              <Link href="/" className={styles.logo}>
-                Global Mortgage Qualifier
-              </Link>
-              <nav className={styles.navLinks}>
-                <Link href="/resources" className={styles.link}>
-                  Resources
+            <nav className={styles.container}>
+              <div className={styles.nav}>
+                <Link href="/" className={styles.logo}>
+                  Global Mortgage Qualifier
                 </Link>
-                <Link href="/contact" className={styles.link}>
-                  Contact
-                </Link>
-                <a
-                  href="https://github.com/andrewchewth/global-mortgage-qualifier"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  GitHub
-                </a>
-              </nav>
-            </div>
+                <div className={styles.navLinks}>
+                  <Link href="/resources" className={styles.link}>
+                    Resources
+                  </Link>
+                  <Link href="/contact" className={styles.link}>
+                    Contact
+                  </Link>
+                  <a
+                    href="https://github.com/andrewchewth/global-mortgage-qualifier"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </nav>
           </header>
+
           <main className={styles.main}>
-            {children}
+            <div className={styles.container}>
+              {children}
+            </div>
           </main>
-          <footer className="border-t py-6 md:py-0">
-            <div className={`${styles.container} flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row`}>
-              <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                © 2024 Global Mortgage Qualifier. All rights reserved.
-              </p>
+
+          <footer className="border-t">
+            <div className={`${styles.container} py-6 md:py-0`}>
+              <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+                <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+                  © 2024 Global Mortgage Qualifier. All rights reserved.
+                </p>
+              </div>
             </div>
           </footer>
+          
           <Toaster position="top-center" />
         </div>
       </body>
