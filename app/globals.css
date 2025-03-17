@@ -1,7 +1,8 @@
-@import './styles/custom-utilities.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './styles/custom-utilities.css';
 
 @layer base {
   :root {
@@ -39,7 +40,7 @@
     --chart-4: 335 85% 65%;
     --chart-5: 130 60% 50%;
     
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
 
   .dark {

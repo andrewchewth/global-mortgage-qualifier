@@ -19,22 +19,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="min-h-screen antialiased bg-gradient-to-br from-background via-background/90 to-background/80">
-        <nav className="absolute top-0 right-0 p-4 z-10">
-          <a
-            href="https://github.com/yourusername/global-mortgage-qualifier"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            GitHub
-          </a>
-        </nav>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          {children}
-        </main>
-        <Toaster position="top-center" />
+    <html lang="en" className={`${inter.variable} antialiased`}>
+      <body className="min-h-screen bg-background text-foreground">
+        <div className="relative min-h-screen flex flex-col">
+          <nav className="absolute top-0 right-0 p-4 z-10">
+            <a
+              href="https://github.com/andrewchewth/global-mortgage-qualifier"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+          </nav>
+          <main className="flex-1 flex flex-col items-center justify-center p-4 md:p-24">
+            {children}
+          </main>
+          <Toaster position="top-center" />
+        </div>
       </body>
     </html>
   )
